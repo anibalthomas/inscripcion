@@ -25,4 +25,16 @@ class HomeController extends Controller
     {
         return view('home');
     }
+    public function solicitud()
+    {
+        return view('solicitud');
+    }
+    public function documentos()
+    {
+        return view('documentos');
+    }
+    public function perfil()
+    {
+        return view('perfil');
+    }
 }

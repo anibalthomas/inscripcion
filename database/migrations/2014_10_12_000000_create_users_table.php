@@ -22,12 +22,12 @@ class CreateUsersTable extends Migration
             $table->string('telefono');
             $table->string('edad');
             $table->string('pais');
+            $table->string('nacionalidad');
+            $table->string('estado');
+            $table->string('municipio');
+            $table->string('calle_num');
             $table->string('colonia');
             $table->string('cp');
-            $table->string('municipio');
-            $table->string('estado');
-            $table->string('nacionalidad');
-            $table->string('calle_num');
             // datos particulares
             $table->string('ult_estudios');
             $table->string('institucion');
