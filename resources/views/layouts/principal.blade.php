@@ -21,7 +21,7 @@
                 </a>
                 <div class="nav-collapse">
                     <ul class="nav pull-right">
-                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> Usuario <b class="caret"></b></a>
+                        <li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="icon-user"></i> {{ Auth::user()->name }} <b class="caret"></b></a>
                             <ul class="dropdown-menu">
                                 <li><a href="{{ route('perfil')}}">Perfil</a></li>
                                 <li><a href="{{ route('logout') }}" onclick="event.preventDefault();
@@ -63,7 +63,9 @@
     </div>
     @yield('content')
 
-    <div class="" style="background-color: black; position: absolute;  bottom: 0;  width: 100%;  height: 40px;  color: white;">
+    <div class=""
+    style="background-color: black; position: absolute;  bottom: 0;  width: 100%;  height: 40px;  color: white;"
+    >
         <div class="extra">
             <div class="extra-inner">
                 <div class="container">
@@ -75,7 +77,7 @@
                                 <li><a href="javascript:;">L.P. Maritza Malpica</a></li>
                                 <li><a href="javascript:;">Tel.(228) 842 18 00 ext. 2005</a></li>
                                 <li><a href="javascript:;">maritza.malpica
-                                        <blade inecol.mx</a> </li> />
+                                        <blade inecol.mx</a> </li>
                             </ul>
                         </div>
                         <div class="span3">
@@ -85,7 +87,7 @@
                                 <li><a href="javascript:;">Ing. Anibal T. Sanchez M.</a></li>
                                 <li><a href="javascript:;">Tel.(228) 842 18 00 ext. 2011</a></li>
                                 <li><a href="javascript:;">anibal.sanchez
-                                        <blade inecol.mx</a> </li> />
+                                        <blade inecol.mx</a> </li>
                             </ul>
                         </div>
                     </div>

@@ -2,16 +2,16 @@
 
 @section('content')
 <div class="container">
+  <form method="POST" action="{{ route('register') }}">
+    @csrf
     <div class="row
     {{-- justify-content-center --}}
     ">
         <div class="col-md-6">
             <div class="card">
-                <div class="card-header">{{ __('Registro') }}</div>
+                <div class="card-header">{{ __('Datos personales') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('register') }}">
-                        @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">{{ __('Nombre') }}</label>
@@ -54,60 +54,6 @@
                                 @endif
                             </div>
                         </div>
-
-                        <div class="form-group row">
-                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
-
-                                @if ($errors->has('email'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('email') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
-
-                                @if ($errors->has('password'))
-                                <span class="invalid-feedback" role="alert">
-                                    <strong>{{ $errors->first('password') }}</strong>
-                                </span>
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="form-group row">
-                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
-
-                            <div class="col-md-6">
-                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
-                            </div>
-                        </div>
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-primary">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-
-        <div class="col-md-6">
-            <div class="card">
-                <div class="card-header">{{ __('Datos personales') }}</div>
-
-                <div class="card-body">
 
                         <div class="form-group row">
                             <label for="telefono" class="col-md-4 col-form-label text-md-right">{{ __('Teléfono') }}</label>
@@ -235,83 +181,182 @@
                             </div>
                         </div>
 
+                        <div class="form-group row">
+                            <label for="email" class="col-md-4 col-form-label text-md-right">{{ __('E-Mail') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="email" type="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email" value="{{ old('email') }}" required>
+
+                                @if ($errors->has('email'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('email') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Contraseña') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password" type="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" name="password" required>
+
+                                @if ($errors->has('password'))
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $errors->first('password') }}</strong>
+                                </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirmar contraseña') }}</label>
+
+                            <div class="col-md-6">
+                                <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required>
+                            </div>
+                        </div>
+
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-6">
+            <div class="card">
+                <div class="card-header">{{ __('Datos particulares y emergencia') }}</div>
+
+                <div class="card-body">
+                  <div class="form-group row">
+                      <label for="ult_estudios" class="col-md-4 col-form-label text-md-right">{{ __('Ultimos estudios') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="ult_estudios" type="text" class="form-control{{ $errors->has('ult_estudios') ? ' is-invalid' : '' }}" name="ult_estudios" value="{{ old('ult_estudios') }}" required>
+
+                          @if ($errors->has('ult_estudios'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('ult_estudios') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="institucion" class="col-md-4 col-form-label text-md-right">{{ __('institución') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="institucion" type="text" class="form-control{{ $errors->has('institucion') ? ' is-invalid' : '' }}" name="institucion" value="{{ old('institucion') }}" required>
+
+                          @if ($errors->has('institucion'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('institucion') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="lug_trabajo" class="col-md-4 col-form-label text-md-right">{{ __('Lugar de trabajo') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="lug_trabajo" type="text" class="form-control{{ $errors->has('lug_trabajo') ? ' is-invalid' : '' }}" name="lug_trabajo" value="{{ old('lug_trabajo') }}" required>
+
+                          @if ($errors->has('lug_trabajo'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('lug_trabajo') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="puesto" class="col-md-4 col-form-label text-md-right">{{ __('Puesto') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="puesto" type="text" class="form-control{{ $errors->has('puesto') ? ' is-invalid' : '' }}" name="puesto" value="{{ old('puesto') }}" required>
+
+                          @if ($errors->has('puesto'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('puesto') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="alergias_enfermedades" class="col-md-4 col-form-label text-md-right">{{ __('Alergias o enfermedades') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="alergias_enfermedades" type="text" class="form-control{{ $errors->has('alergias_enfermedades') ? ' is-invalid' : '' }}" name="alergias_enfermedades" value="{{ old('alergias_enfermedades') }}" required>
+
+                          @if ($errors->has('alergias_enfermedades'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('alergias_enfermedades') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="tipo_sangre" class="col-md-4 col-form-label text-md-right">{{ __('Tipo de sangre') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="tipo_sangre" type="text" class="form-control{{ $errors->has('tipo_sangre') ? ' is-invalid' : '' }}" name="tipo_sangre" value="{{ old('tipo_sangre') }}" required>
+
+                          @if ($errors->has('tipo_sangre'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('tipo_sangre') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="nombre_emergencia" class="col-md-4 col-form-label text-md-right">{{ __('En caso de accidente avisar a:') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="nombre_emergencia" type="text" class="form-control{{ $errors->has('nombre_emergencia') ? ' is-invalid' : '' }}" name="nombre_emergencia" value="{{ old('nombre_emergencia') }}" required>
+
+                          @if ($errors->has('nombre_emergencia'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('nombre_emergencia') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="parentesco" class="col-md-4 col-form-label text-md-right">{{ __('Parentesco') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="parentesco" type="text" class="form-control{{ $errors->has('parentesco') ? ' is-invalid' : '' }}" name="parentesco" value="{{ old('parentesco') }}" required>
+
+                          @if ($errors->has('parentesco'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('parentesco') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row">
+                      <label for="telefono_emergencia" class="col-md-4 col-form-label text-md-right">{{ __('Teléfono de emergencia') }}</label>
+
+                      <div class="col-md-6">
+                          <input id="telefono_emergencia" type="text" class="form-control{{ $errors->has('telefono_emergencia') ? ' is-invalid' : '' }}" name="telefono_emergencia" value="{{ old('telefono_emergencia') }}" required>
+
+                          @if ($errors->has('telefono_emergencia'))
+                          <span class="invalid-feedback" role="alert">
+                              <strong>{{ $errors->first('telefono_emergencia') }}</strong>
+                          </span>
+                          @endif
+                      </div>
+                  </div>
+                  <div class="form-group row mb-0">
+                      <div class="col-md-6 offset-md-4">
+                          <button type="submit" class="btn btn-primary">
+                              {{ __('Registrar') }}
+                          </button>
+                      </div>
+                  </div>
+
                 </div>
             </div>
         </div>
     </div>
-<div class="row">
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">{{ __('Datos particulares') }}</div>
-            <div class="card-body">
-              <div class="form-group row">
-                  <label for="colonia" class="col-md-4 col-form-label text-md-right">{{ __('Ultimos estudios') }}</label>
 
-                  <div class="col-md-6">
-                      <input id="colonia" type="text" class="form-control{{ $errors->has('colonia') ? ' is-invalid' : '' }}" name="colonia" value="{{ old('colonia') }}" required>
-
-                      @if ($errors->has('colonia'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('colonia') }}</strong>
-                      </span>
-                      @endif
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colonia" class="col-md-4 col-form-label text-md-right">{{ __('Colonia') }}</label>
-
-                  <div class="col-md-6">
-                      <input id="colonia" type="text" class="form-control{{ $errors->has('colonia') ? ' is-invalid' : '' }}" name="colonia" value="{{ old('colonia') }}" required>
-
-                      @if ($errors->has('colonia'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('colonia') }}</strong>
-                      </span>
-                      @endif
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colonia" class="col-md-4 col-form-label text-md-right">{{ __('Colonia') }}</label>
-
-                  <div class="col-md-6">
-                      <input id="colonia" type="text" class="form-control{{ $errors->has('colonia') ? ' is-invalid' : '' }}" name="colonia" value="{{ old('colonia') }}" required>
-
-                      @if ($errors->has('colonia'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('colonia') }}</strong>
-                      </span>
-                      @endif
-                  </div>
-              </div>
-              <div class="form-group row">
-                  <label for="colonia" class="col-md-4 col-form-label text-md-right">{{ __('Colonia') }}</label>
-
-                  <div class="col-md-6">
-                      <input id="colonia" type="text" class="form-control{{ $errors->has('colonia') ? ' is-invalid' : '' }}" name="colonia" value="{{ old('colonia') }}" required>
-
-                      @if ($errors->has('colonia'))
-                      <span class="invalid-feedback" role="alert">
-                          <strong>{{ $errors->first('colonia') }}</strong>
-                      </span>
-                      @endif
-                  </div>
-              </div>
-
-            </div>
-          </div>
-        </div>
-
-        <div class="col-md-6">
-          <div class="card">
-            <div class="card-header">{{ __('Datos de emergencia') }}</div>
-            <div class="card-body">
-
-            </div>
-          </div>
-        </div>
-
-</div>
-
-
+  </form>
 </div>
 @endsection

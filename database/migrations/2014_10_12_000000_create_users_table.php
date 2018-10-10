@@ -39,9 +39,7 @@ class CreateUsersTable extends Migration
             $table->string('nombre_emergencia');
             $table->string('parentesco');
             $table->string('telefono_emergencia');
-            // datos de informacion
-            $table->string('motivos');
-            //
+
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
