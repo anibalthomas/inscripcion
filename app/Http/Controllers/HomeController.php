@@ -38,4 +38,8 @@ class HomeController extends Controller
     {
         return view('perfil');
     }
+    public function panel()
+    {
+        return view('panel');
+    }
 }

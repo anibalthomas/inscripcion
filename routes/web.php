@@ -21,5 +21,9 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/solicitud', 'HomeController@solicitud')->name('solicitud');
 Route::get('/documentos', 'HomeController@documentos')->name('documentos');
 Route::get('/perfil', 'HomeController@perfil')->name('perfil');
+Route::get('/panel', 'HomeController@panel')->name('panel');
 
 Route::post('guardar', 'CursosController@store')->name('guardar');
+
+Route::put('documentos/{id}', 'EstudiantesController@update')->name('update');
+Route::put('cursos/{id}', 'CursosController@update')->name('update.curso');

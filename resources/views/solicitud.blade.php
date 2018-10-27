@@ -2,13 +2,9 @@
 
 @section('content')
   <div class="container">
-
     <div class="row">
-
       <div class="span12">
-
         <div class="widget ">
-
           <div class="widget-header">
             <i class="icon-user"></i>
             <h3>Solicitud de curso</h3>
@@ -45,4 +41,7 @@
       </div> <!-- /span8 -->
     </div> <!-- /row -->
   </div> <!-- /container -->
+@endsection
+@section('footer')
+  style="background-color: black; position: absolute;  bottom: 0;  width: 100%;  height: 40px;  color: white;"
 @endsection

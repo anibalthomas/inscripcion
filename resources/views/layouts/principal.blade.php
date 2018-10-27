@@ -45,6 +45,7 @@
                     <li class="{{ request()->is('home') ? 'active' : '' }}"><a href="{{ route('home')}}"><i class="icon-dashboard"></i><span>Inicio</span> </a> </li>
                     <li class="{{ request()->is('solicitud') ? 'active' : '' }}"><a href="{{ route('solicitud')}}"><i class="icon-list-alt"></i><span>Solicitud</span> </a> </li>
                     <li class="{{ request()->is('documentos') ? 'active' : '' }}"><a href="{{ route('documentos')}}"><i class="icon-long-arrow-down"></i><span>Documentos</span> </a></li>
+                    <li class="{{ request()->is('panel') ? 'active' : '' }}"><a href="{{ route('panel')}}"><i class="icon-list-alt"></i><span>Panel</span> </a></li>
                     {{-- <li><a href="charts.html"><i class="icon-bar-chart"></i><span>Charts</span> </a> </li>
         <li><a href="shortcodes.html"><i class="icon-code"></i><span>Shortcodes</span> </a> </li>
         <li class="dropdown"><a href="javascript:;" class="dropdown-toggle" data-toggle="dropdown"> <i class="icon-long-arrow-down"></i><span>Drops</span> <b class="caret"></b></a>
@@ -64,7 +65,7 @@
     @yield('content')
 
     <div class=""
-    style="background-color: black; position: absolute;  bottom: 0;  width: 100%;  height: 40px;  color: white;"
+    @yield('footer')
     >
         <div class="extra">
             <div class="extra-inner">
@@ -81,8 +82,8 @@
                             </ul>
                         </div>
                         <div class="span3">
-                            <h4>
-                                Soporte Técnico</h4>
+                          <h4>
+                              Soporte Técnico</h4>
                             <ul>
                                 <li><a href="javascript:;">Ing. Anibal T. Sanchez M.</a></li>
                                 <li><a href="javascript:;">Tel.(228) 842 18 00 ext. 2011</a></li>
@@ -109,6 +110,9 @@
     <script src="/plantilla/js/chart.min.js" type="text/javascript"></script>
     <script src="/plantilla/js/bootstrap.js"></script>
     <script src="/plantilla/js/base.js"></script>
+    {{-- NUEVOS --}}
+    <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
+    @include('sweetalert::alert')
 
 </body>
 

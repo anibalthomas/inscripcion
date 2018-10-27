@@ -18,7 +18,10 @@ class CreateCursosTable extends Migration
             $table->string('nombre');
             $table->string('motivos');
             $table->string('acuerdo')->nullable();
-            // $table->string('pago');
+
+            $table->string('pago')->nullable();
+            $table->string('carta_institucion')->nullable();
+            $table->string('credencial_inecol')->nullable();
             $table->timestamps();
         });
     }

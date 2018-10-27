@@ -19,7 +19,7 @@ class User extends Authenticatable
         'name', 'email', 'password','apellido_p','apellido_m','telefono','edad','pais',
         'nacionalidad','estado','municipio','calle_num','colonia','cp','ult_estudios','institucion',
         'lug_trabajo','puesto','alergias_enfermedades','tipo_sangre','nombre_emergencia','parentesco',
-        'telefono_emergencia'
+        'telefono_emergencia','identificacion','titulo_cedula','constancia_inst','ingreso_pais','doc_apostillado'
     ];
 
     /**

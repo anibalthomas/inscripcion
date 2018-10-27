@@ -5,6 +5,7 @@ use App\Curso;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RealRashid\SweetAlert\Facades\Alert;
 
 class CursosController extends Controller
 {
@@ -79,7 +80,28 @@ class CursosController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $this->validate($request, [
+      'pago' => 'mimes:pdf,jpeg,png,jpg|max:5000',
+      'carta_institucion' => 'mimes:pdf,jpeg,png,jpg|max:5000',
+      'credencial_inecol' => 'mimes:pdf,jpeg,png,jpg|max:5000',
+      ]);
+      $curso = Curso::findOrFail($id);
+      // return $request->all();
+
+      if ($request->hasFile('pago')) {
+      $curso->pago = $request->file('pago')->store('public/'.Auth::user()->id.'/cursos/'.$curso->nombre.'/pago');
+      }
+      if ($request->hasFile('carta_institucion')) {
+      $curso->carta_institucion =  $request->file('carta_institucion')->store('public/'.Auth::user()->id.'/cursos/'.$curso->nombre.'/carta_institucion');
+      }
+      if ($request->hasFile('credencial_inecol')) {
+      $curso->credencial_inecol =  $request->file('credencial_inecol')->store('public/'.Auth::user()->id.'/cursos/'.$curso->nombre.'/credencial_inecol');
+      }
+      $curso->save();
+
+      alert()->success('Tus documentos se han enviando correctamente!','');
+      // toast('Tus documentos se han enviando correctamente!','success','top-right');
+      return back();
     }
 
     /**
