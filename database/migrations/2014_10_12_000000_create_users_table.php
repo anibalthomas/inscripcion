@@ -46,6 +46,7 @@ class CreateUsersTable extends Migration
             $table->string('ingreso_pais')->default('default.png');
             $table->string('doc_apostillado')->default('default.png');
 
+            $table->string('avatar')->default('avatar.jpg');
 
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();

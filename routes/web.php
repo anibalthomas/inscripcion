@@ -26,4 +26,5 @@ Route::get('/panel', 'HomeController@panel')->name('panel');
 Route::post('guardar', 'CursosController@store')->name('guardar');
 
 Route::put('documentos/{id}', 'EstudiantesController@update')->name('update');
-Route::put('cursos/{id}', 'CursosController@update')->name('update.curso');
+Route::put('estudiante/{id}', 'EstudiantesController@update_profile')->name('update.estudiante');
+Route::put('curso/{id}', 'CursosController@update')->name('update.curso');

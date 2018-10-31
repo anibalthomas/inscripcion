@@ -34,6 +34,7 @@ class UsersTableSeeder extends Seeder
       $user->nombre_emergencia = "Ines Mújica";
       $user->parentesco = "Madre";
       $user->telefono_emergencia = "8155548";
+      $user->avatar = "avatar.jpg";
       $user->email = "anibal.sanchez@inecol.mx";
       $user->password = bcrypt('123456');
       $user->save();

@@ -103,6 +103,47 @@ class EstudiantesController extends Controller
 
     }
 
+    public function update_profile(Request $request, $id)
+    {
+      $this->validate($request, [
+      'avatar' => 'mimes:jpeg,png,jpg|max:5000',
+]);
+        $user = User::findOrFail($id);
+
+        // return $request->all();
+        $user->name = $request->get('name');
+        $user->apellido_p = $request->get('apellido_p');
+        $user->apellido_m = $request->get('apellido_m');
+        $user->telefono = $request->get('telefono');
+        $user->edad = $request->get('edad');
+        $user->pais = $request->get('pais');
+        $user->nacionalidad = $request->get('nacionalidad');
+        $user->estado = $request->get('estado');
+        $user->municipio = $request->get('municipio');
+        $user->calle_num = $request->get('calle_num');
+        $user->colonia = $request->get('colonia');
+        $user->cp = $request->get('cp');
+        $user->ult_estudios = $request->get('ult_estudios');
+        $user->institucion = $request->get('institucion');
+        $user->lug_trabajo = $request->get('lug_trabajo');
+        $user->puesto = $request->get('puesto');
+        $user->alergias_enfermedades = $request->get('alergias_enfermedades');
+        $user->tipo_sangre = $request->get('tipo_sangre');
+        $user->nombre_emergencia = $request->get('nombre_emergencia');
+        $user->parentesco = $request->get('parentesco');
+        $user->telefono_emergencia = $request->get('telefono_emergencia');
+
+        if ($request->hasFile('avatar')) {
+        $user->avatar = $request->file('avatar')->store('public/'.Auth::user()->id.'/avatar');
+        }
+        $user->save();
+
+        // alert()->success('Tus datos de actualizaron correctamente!','');
+        toast('Tus datos de actualizaron correctamente!','success','top-right');
+        return back();
+
+    }
+
     /**
      * Remove the specified resource from storage.
      *
