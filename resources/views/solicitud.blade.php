@@ -25,7 +25,7 @@
       <div class="form-group ">
         <div class="col-sm-12">
           <input type="checkbox" class="col-sm-2 col-sm-2 control-label" name="acuerdo" required>
-          <label for="agree" class="col-lg-10 col-sm-10">Acataré las obligraciones y derechos indicados en el <a href="http://normateca.inecol.edu.mx/normateca/documentos/0311.pdf">Manual de Operación</a> de la Secretaría de Posgrado</label>
+          <label for="agree" class="col-lg-10 col-sm-10">Acataré las obligraciones y derechos indicados en el <a target="_blank" href="http://normateca.inecol.edu.mx/normateca/documentos/0311.pdf">Manual de Operación</a> de la Secretaría de Posgrado</label>
         </div>
       </div>
 

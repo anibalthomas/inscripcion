@@ -14,6 +14,7 @@
     <link href="/front/lib/font-awesome/css/font-awesome.css" rel="stylesheet" />
     <link href="/front/css/style.css" rel="stylesheet">
     <link href="/front/css/style-responsive.css" rel="stylesheet">
+        @stack('style')
 </head>
 
 <body>
@@ -175,14 +176,14 @@
                     <li class="sub-menu">
                         <a class="{{ request()->is('solicitud') ? 'active' : '' }}" href="{{ route('solicitud')}}">
                             <i class="fa fa-desktop"></i>
-                            <span>Solicitud</span>
+                            <span>Solicitud de curso</span>
                         </a>
                     </li>
 
                     <li class="sub-menu">
                         <a class="{{ request()->is('documentos') ? 'active' : '' }}" href="{{ route('documentos')}}">
                             <i class="fa fa-cogs"></i>
-                            <span>Documentos</span>
+                            <span>Documentos de inscripción</span>
                         </a>
                         {{-- <ul class="sub">
                             <li><a href="grids.html">Grids</a></li>
@@ -255,6 +256,7 @@
     <script src="/front/lib/common-scripts.js"></script>
     <script src="https://unpkg.com/sweetalert2@7.18.0/dist/sweetalert2.all.js"></script>
     @include('sweetalert::alert')
+    @stack('script')
 
 </body>
 

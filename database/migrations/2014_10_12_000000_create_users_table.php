@@ -40,11 +40,11 @@ class CreateUsersTable extends Migration
             $table->string('parentesco');
             $table->string('telefono_emergencia');
             // datos de archivo
-            $table->string('identificacion')->default('default.png');
-            $table->string('titulo_cedula')->default('default.png');
-            $table->string('constancia_inst')->default('default.png');
-            $table->string('ingreso_pais')->default('default.png');
-            $table->string('doc_apostillado')->default('default.png');
+            $table->string('identificacion')->nullable();
+            $table->string('titulo_cedula')->nullable();
+            $table->string('constancia_inst')->nullable();
+            $table->string('ingreso_pais')->nullable();
+            $table->string('doc_apostillado')->nullable();
 
             $table->string('avatar')->default('avatar.jpg');
 

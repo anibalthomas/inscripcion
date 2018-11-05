@@ -19,7 +19,7 @@
 
                         <div class='form-group'>
 
-                            <img width="100px" src="{{ Storage::url(auth()->user()->identificacion)}}" alt="">
+                            {{-- <img width="100px" src="{{ Storage::url(auth()->user()->identificacion)}}" alt=""> --}}
                             <label for='name-id'>Copia de la credencial de elector o pasaporte</label>
                             <p><label for="identificacion">
                                     <input type="file" name="identificacion" class="{{ $errors->has('identificacion') ? ' is-invalid' : '' }}">

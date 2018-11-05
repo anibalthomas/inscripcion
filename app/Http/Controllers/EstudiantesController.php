@@ -139,7 +139,7 @@ class EstudiantesController extends Controller
         $user->save();
 
         // alert()->success('Tus datos de actualizaron correctamente!','');
-        toast('Tus datos de actualizaron correctamente!','success','top-right');
+        toast('Tus datos se actualizaron correctamente!','success','top-right');
         return back();
 
     }
